@@ -1,0 +1,136 @@
+{
+  "rules": {
+    "users": {
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        ".write": "$userId === auth.uid",
+        ".validate": "newData.hasChildren(['name', 'email', 'createdAt'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/)"
+        },
+        "createdAt": {
+          ".validate": "newData.isString()"
+        }
+      }
+    },
+    "invoices": {
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        ".write": "$userId === auth.uid",
+        "$invoiceId": {
+          ".validate": "newData.hasChildren(['dueDate', 'totalValue', 'referenceMonth', 'uploadedAt'])",
+          "dueDate": {
+            ".validate": "newData.isString()"
+          },
+          "totalValue": {
+            ".validate": "newData.isNumber() && newData.val() >= 0"
+          },
+          "minimumPayment": {
+            ".validate": "newData.isNumber() && newData.val() >= 0"
+          },
+          "referenceMonth": {
+            ".validate": "newData.isString()"
+          },
+          "closingDate": {
+            ".validate": "newData.isString()"
+          },
+          "uploadedAt": {
+            ".validate": "newData.isString()"
+          },
+          "expenses": {
+            "$expenseId": {
+              ".validate": "newData.hasChildren(['date', 'description', 'value', 'category'])",
+              "date": {
+                ".validate": "newData.isString()"
+              },
+              "description": {
+                ".validate": "newData.isString() && newData.val().length > 0"
+              },
+              "establishment": {
+                ".validate": "newData.isString()"
+              },
+              "city": {
+                ".validate": "newData.isString()"
+              },
+              "value": {
+                ".validate": "newData.isNumber() && newData.val() > 0"
+              },
+              "category": {
+                ".validate": "newData.isString()"
+              },
+              "installment": {
+                ".validate": "newData.isString()"
+              },
+              "isInstallment": {
+                ".validate": "newData.isBoolean()"
+              },
+              "autoCategorized": {
+                ".validate": "newData.isBoolean()"
+              },
+              "createdAt": {
+                ".validate": "newData.isString()"
+              }
+            }
+          }
+        }
+      }
+    },
+    "categories": {
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        ".write": "$userId === auth.uid",
+        "savedCategories": {
+          ".validate": "newData.hasChildren()"
+        },
+        "customCategories": {
+          "$categoryId": {
+            ".validate": "newData.hasChildren(['name', 'color', 'isRecurring', 'createdAt'])",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            },
+            "color": {
+              ".validate": "newData.isString() && newData.val().matches(/^#[0-9A-Fa-f]{6}$/)"
+            },
+            "isRecurring": {
+              ".validate": "newData.isBoolean()"
+            },
+            "createdAt": {
+              ".validate": "newData.isString()"
+            }
+          }
+        }
+      }
+    },
+    "goals": {
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        ".write": "$userId === auth.uid",
+        "$goalId": {
+          ".validate": "newData.hasChildren(['category', 'limitValue', 'createdAt'])",
+          "category": {
+            ".validate": "newData.isString() && newData.val().length > 0"
+          },
+          "limitValue": {
+            ".validate": "newData.isNumber() && newData.val() > 0"
+          },
+          "alertAt80": {
+            ".validate": "newData.isBoolean()"
+          },
+          "alertAt100": {
+            ".validate": "newData.isBoolean()"
+          },
+          "monthlyReset": {
+            ".validate": "newData.isBoolean()"
+          },
+          "createdAt": {
+            ".validate": "newData.isString()"
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Filtro de Mês -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="?attr/colorSurfaceVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Período de Análise"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textColor="?attr/colorPrimary"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_invoice"
+                        android:tint="?attr/colorPrimary"
+                        android:contentDescription="Calendário" />
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="?attr/colorPrimary">
+
+                    <Spinner
+                        android:id="@+id/spinnerMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:background="?attr/colorSurface"
+                        android:paddingHorizontal="16dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card Resumo -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/textReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Relatório Mensal"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary" />
+
+                <!-- Total Gasto -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="💰 Total Gasto:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <TextView
+                        android:id="@+id/textTotalValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$ 0,00"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"
+                        tools:text="R$ 2.600,35" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutline"
+                    android:layout_marginVertical="12dp" />
+
+                <!-- Número de Despesas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📝 Despesas:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+                    <TextView
+                        android:id="@+id/textExpenseCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textStyle="bold"
+                        tools:text="52" />
+                </LinearLayout>
+
+                <!-- Número de Categorias -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🏷️ Categorias:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+                    <TextView
+                        android:id="@+id/textCategoryCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textStyle="bold"
+                        tools:text="8" />
+                </LinearLayout>
+
+                <!-- Comparação com mês anterior -->
+                <TextView
+                    android:id="@+id/textComparison"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    tools:text="📈 15% maior que o mês anterior" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Top 5 Categorias -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Top 5 Categorias"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Lista estática de Top 5 Categorias -->
+                <include layout="@layout/item_category_legend" 
+                    android:id="@+id/item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Top 5 Estabelecimentos -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEstablishments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏪 Top 5 Estabelecimentos"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTopEstablishments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_establishment_ranking" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Estado Vazio -->
+        <LinearLayout
+            android:id="@+id/layoutEmptyState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_empty_invoices"
+                android:alpha="0.6"
+                android:contentDescription="Nenhuma fatura" />
+
+            <TextView
+                android:id="@+id/textEmptyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nenhuma fatura disponível para este mês"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <!-- Loading -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="4dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="8dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="?attr/colorOutline">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Header: Date and Value -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="08 MAI"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 148,00"
+                android:textSize="16sp"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- Establishment -->
+        <TextView
+            android:id="@+id/textEstablishment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEICAR"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+
+        <!-- City and Installment -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/textCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CORONEL VIVID"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"/>
+
+            <TextView
+                android:id="@+id/textInstallment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02/03"
+                android:textSize="12sp"
+                android:textColor="?attr/colorSecondary"
+                android:visibility="gone"
+                android:background="@drawable/bg_installment_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"/>
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"
+            android:layout_marginVertical="8dp"/>
+
+        <!-- Category Selection -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeWidth="1dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdownCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Categoria"
+                android:inputType="none"
+                android:textSize="14sp"
+                android:padding="12dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

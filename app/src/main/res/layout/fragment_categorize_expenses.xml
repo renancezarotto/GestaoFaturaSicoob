@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:fitsSystemWindows="true">
+
+    <!-- Cabeçalho Padronizado -->
+    <include
+        android:id="@+id/commonToolbar"
+        layout="@layout/include_app_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Header Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintTop_toBottomOf="@id/commonToolbar">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textInvoiceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fatura de Junho 2025"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"/>
+
+            <TextView
+                android:id="@+id/textInvoiceTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: R$ 2.600,35"
+                android:textSize="16sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="4dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline"
+                android:layout_marginVertical="12dp"/>
+
+            <TextView
+                android:id="@+id/textCategorizationProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 de 0 despesas categorizadas"
+                android:textSize="14sp"
+                android:textColor="?attr/colorSecondary"
+                android:textStyle="bold"/>
+
+            <ProgressBar
+                android:id="@+id/progressCategorization"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="?attr/colorPrimary"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar Fatura"
+        android:enabled="false"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/md_theme_light_primary"
+        app:cornerRadius="24dp"
+        style="@style/Widget.App.Button"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Loading Overlay -->
+    <FrameLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:indeterminateTint="@color/md_theme_light_primary"/>
+
+            <TextView
+                android:id="@+id/textLoadingMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salvando fatura..."
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

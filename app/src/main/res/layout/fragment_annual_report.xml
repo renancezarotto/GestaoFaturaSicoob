@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Card Resumo Anual -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/textReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Relatório Anual 2025"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary" />
+
+                <!-- Total Anual -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="💰 Total Anual:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+
+                    <TextView
+                        android:id="@+id/textTotalValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$ 0,00"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"
+                        tools:text="R$ 31.200,00" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutline"
+                    android:layout_marginVertical="12dp" />
+
+                <!-- Média Mensal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📈 Média Mensal:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+                    <TextView
+                        android:id="@+id/textAverageValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$ 0,00"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textStyle="bold"
+                        tools:text="R$ 2.600,00" />
+                </LinearLayout>
+
+                <!-- Número de Faturas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Faturas Processadas:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+                    <TextView
+                        android:id="@+id/textInvoiceCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textStyle="bold"
+                        tools:text="12 meses" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Melhor e Pior Mês -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBestWorst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Análise de Gastos"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Melhor Mês -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="✅ Melhor Mês:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="#4CAF50" />
+
+                    <TextView
+                        android:id="@+id/textBestMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textStyle="bold"
+                        tools:text="Janeiro - R$ 1.200,00" />
+                </LinearLayout>
+
+                <!-- Pior Mês -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="⚠️ Pior Mês:"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="#F44336" />
+
+                    <TextView
+                        android:id="@+id/textWorstMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textStyle="bold"
+                        tools:text="Dezembro - R$ 4.500,00" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Evolução Mensal -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📈 Evolução Mensal"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gastos mensais e comparações"
+                    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Resumo Geral -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="?attr/colorSurfaceVariant"
+                    app:backgroundTint="?attr/colorPrimaryContainer"
+                    app:backgroundTintMode="multiply"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginHorizontal="-8dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/textTotalYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="R$ 0,00"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            tools:text="R$ 28.500,00" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total no Ano"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/colorOutline"
+                        android:alpha="0.5" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/textAverageMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="R$ 0,00"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            tools:text="R$ 2.375,00" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Média Mensal"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Primeiras 3 linhas visíveis -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:focusable="false"
+                    android:clickable="false">
+                    
+                    <include layout="@layout/item_monthly_evolution"
+                        android:id="@+id/month1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    
+                    <include layout="@layout/item_monthly_evolution"
+                        android:id="@+id/month2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    
+                    <include layout="@layout/item_monthly_evolution"
+                        android:id="@+id/month3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                        
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerMonthlyEvolution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="12"
+                    tools:listitem="@layout/item_monthly_evolution" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Top Categorias Anual -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTopCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏆 Top Categorias do Ano"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Lista estática de Top 5 Categorias -->
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <include layout="@layout/item_category_legend"
+                    android:id="@+id/item5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Estado Vazio -->
+        <LinearLayout
+            android:id="@+id/layoutEmptyState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_empty_invoices"
+                android:alpha="0.6"
+                android:contentDescription="Nenhuma fatura" />
+
+            <TextView
+                android:id="@+id/textEmptyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nenhuma fatura disponível"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <!-- Loading -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

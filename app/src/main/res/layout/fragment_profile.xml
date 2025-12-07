@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:fitsSystemWindows="true"
+    tools:context=".presentation.profile.ProfileFragment">
+
+    <!-- Cabeçalho Padronizado -->
+    <include layout="@layout/include_app_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Header Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- Profile Photo with Edit Button -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPhoto"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="4dp"
+                            app:strokeWidth="3dp"
+                            app:strokeColor="?attr/colorPrimary"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageUserPhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_profile"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Foto de perfil"/>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- User Name -->
+                    <TextView
+                        android:id="@+id/textUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nome do Usuário"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"/>
+
+                    <!-- User Email -->
+                    <TextView
+                        android:id="@+id/textUserEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="usuario@email.com"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:alpha="0.8"
+                        android:layout_marginBottom="4dp"/>
+
+                    <!-- User Since -->
+                    <TextView
+                        android:id="@+id/textUserSince"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Usuário desde 2025"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Edit Profile Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonEditProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Editar Perfil"
+                        app:icon="@android:drawable/ic_menu_edit"
+                        style="@style/Widget.Material3.Button.TonalButton"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Financial Info Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardFinancialInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Informações Financeiras"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Income Row -->
+                    <LinearLayout
+                        android:id="@+id/layoutIncomeInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"
+                        android:background="@drawable/bg_rounded_light"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_money"
+                            app:tint="?attr/colorPrimary"
+                            android:layout_marginEnd="12dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Renda Mensal"
+                                android:textSize="12sp"
+                                android:textColor="?attr/colorOnSurfaceVariant"/>
+
+                            <TextView
+                                android:id="@+id/textUserIncome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R$ 5.000,00"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="?attr/colorPrimary"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Phone Row -->
+                    <LinearLayout
+                        android:id="@+id/layoutPhoneInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        android:background="@drawable/bg_rounded_light"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_phone"
+                            app:tint="?attr/colorPrimary"
+                            android:layout_marginEnd="12dp"
+                            android:layout_gravity="center_vertical"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Telefone"
+                                android:textSize="12sp"
+                                android:textColor="?attr/colorOnSurfaceVariant"/>
+
+                            <TextView
+                                android:id="@+id/textUserPhone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(11) 99999-9999"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnSurface"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Empty State -->
+                    <TextView
+                        android:id="@+id/textEmptyFinancialInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Complete seu perfil para ver suas informações financeiras"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
+                        android:padding="16dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Actions Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ações Rápidas"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginBottom="12dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonManageCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gerenciar Categorias"
+                        android:layout_marginBottom="8dp"
+                        app:icon="@drawable/ic_invoice"
+                        style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonManageGoals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gerenciar Metas"
+                        app:icon="@drawable/ic_category"
+                        style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- App Info Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gestão Fatura Sicoob"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Versão 1.0.0"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Controle financeiro inteligente"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Logout Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Sair da Conta"
+                android:textColor="?attr/colorError"
+                app:icon="@android:drawable/ic_menu_close_clear_cancel"
+                app:iconTint="?attr/colorError"
+                app:strokeColor="?attr/colorError"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

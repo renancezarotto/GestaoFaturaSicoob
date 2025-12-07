@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design 3 Colors - Light Theme -->
+    <!-- Nova paleta azul moderna baseada em #2196F3 -->
+    <color name="md_theme_light_primary">#2196F3</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#BBDEFB</color>
+    <color name="md_theme_light_onPrimaryContainer">#0D47A1</color>
+    
+    <color name="md_theme_light_secondary">#1976D2</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#90CAF9</color>
+    <color name="md_theme_light_onSecondaryContainer">#0D47A1</color>
+    
+    <color name="md_theme_light_tertiary">#1E88E5</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#64B5F6</color>
+    <color name="md_theme_light_onTertiaryContainer">#0D47A1</color>
+    
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_onErrorContainer">#410002</color>
+    
+    <color name="md_theme_light_background">#f5fdfb</color>
+    <color name="md_theme_light_onBackground">#191c1c</color>
+    <color name="md_theme_light_surface">#f5fdfb</color>
+    <color name="md_theme_light_onSurface">#191c1c</color>
+    <color name="md_theme_light_surfaceVariant">#dae5e2</color>
+    <color name="md_theme_light_onSurfaceVariant">#3f4947</color>
+    
+    <color name="md_theme_light_outline">#6f7977</color>
+    <color name="md_theme_light_outlineVariant">#bec9c6</color>
+    <color name="md_theme_light_shadow">#000000</color>
+    <color name="md_theme_light_scrim">#000000</color>
+    <color name="md_theme_light_inverseSurface">#2d3130</color>
+    <color name="md_theme_light_inverseOnSurface">#eff1ef</color>
+    <color name="md_theme_light_inversePrimary">#64B5F6</color>
+
+    <!-- Material Design 3 Colors - Dark Theme -->
+    <!-- Nova paleta azul para modo escuro -->
+    <color name="md_theme_dark_primary">#64B5F6</color>
+    <color name="md_theme_dark_onPrimary">#0D47A1</color>
+    <color name="md_theme_dark_primaryContainer">#1565C0</color>
+    <color name="md_theme_dark_onPrimaryContainer">#BBDEFB</color>
+    
+    <color name="md_theme_dark_secondary">#90CAF9</color>
+    <color name="md_theme_dark_onSecondary">#0D47A1</color>
+    <color name="md_theme_dark_secondaryContainer">#1565C0</color>
+    <color name="md_theme_dark_onSecondaryContainer">#E3F2FD</color>
+    
+    <color name="md_theme_dark_tertiary">#42A5F5</color>
+    <color name="md_theme_dark_onTertiary">#0D47A1</color>
+    <color name="md_theme_dark_tertiaryContainer">#1976D2</color>
+    <color name="md_theme_dark_onTertiaryContainer">#BBDEFB</color>
+    
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    
+    <color name="md_theme_dark_background">#0f1211</color>
+    <color name="md_theme_dark_onBackground">#e0e3e1</color>
+    <color name="md_theme_dark_surface">#0f1211</color>
+    <color name="md_theme_dark_onSurface">#e0e3e1</color>
+    <color name="md_theme_dark_surfaceVariant">#3f4947</color>
+    <color name="md_theme_dark_onSurfaceVariant">#bec9c6</color>
+    
+    <color name="md_theme_dark_outline">#899390</color>
+    <color name="md_theme_dark_outlineVariant">#3f4947</color>
+    <color name="md_theme_dark_shadow">#000000</color>
+    <color name="md_theme_dark_scrim">#000000</color>
+    <color name="md_theme_dark_inverseSurface">#e0e3e1</color>
+    <color name="md_theme_dark_inverseOnSurface">#2d3130</color>
+    <color name="md_theme_dark_inversePrimary">#2196F3</color>
+
+    <!-- Legacy colors for compatibility -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Category Colors removidas - não utilizadas mais -->
+    
+    <!-- Status Colors - Harmonizados com azul -->
+    <color name="status_paid">#4CAF50</color>      <!-- Verde - pago -->
+    <color name="status_pending">#FFA726</color>   <!-- Laranja - pendente -->
+    <color name="status_overdue">#F44336</color>   <!-- Vermelho - vencido -->
+</resources>

@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Gestão Fatura Sicoob</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Início</string>
+    <string name="nav_invoices">Faturas</string>
+    <string name="nav_reports">Relatórios</string>
+    <string name="nav_profile">Perfil</string>
+    
+    <!-- Authentication -->
+    <string name="auth_login">Entrar</string>
+    <string name="auth_register">Cadastrar</string>
+    <string name="auth_logout">Sair</string>
+    <string name="auth_email">E-mail</string>
+    <string name="auth_password">Senha</string>
+    <string name="auth_name">Nome</string>
+    <string name="auth_forgot_password">Esqueci minha senha</string>
+    <string name="auth_google_signin">Entrar com Google</string>
+    
+    <!-- Google Sign-In Web Client ID (from google-services.json) -->
+    <string name="default_web_client_id" translatable="false">890637653023-hggked7uvnf3936sknps573ogc6hi0v0.apps.googleusercontent.com</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_no_invoice">Nenhuma fatura processada ainda</string>
+    <string name="dashboard_add_invoice">Adicionar Fatura</string>
+    <string name="dashboard_due_date">Vence em %1$d dias</string>
+    <string name="dashboard_expenses_by_category">Gastos por Categoria</string>
+    <string name="dashboard_goals">Suas Metas</string>
+    
+    <!-- Invoice -->
+    <string name="invoice_title">Faturas</string>
+    <string name="invoice_upload">Upload de Fatura</string>
+    <string name="invoice_select_pdf">Selecionar PDF</string>
+    <string name="invoice_processing">Processando fatura...</string>
+    <string name="invoice_categorize">Categorizar Despesas</string>
+    <string name="invoice_save">Salvar Fatura</string>
+    <string name="invoice_total">Total: %1$s</string>
+    <string name="invoice_due_date">Vencimento: %1$s</string>
+    <string name="invoice_minimum_payment">Pagamento Mínimo: %1$s</string>
+    
+    <!-- Categories -->
+    <string name="category_select">Selecionar Categoria</string>
+    <string name="category_create">Criar Categoria</string>
+    <string name="category_name">Nome da Categoria</string>
+    <string name="category_color">Cor</string>
+    <string name="category_recurring">Recorrente</string>
+    <string name="category_save">Salvar</string>
+    <string name="category_cancel">Cancelar</string>
+    
+    <!-- Goals -->
+    <string name="goals_title">Metas de Gastos</string>
+    <string name="goals_create">Criar Meta</string>
+    <string name="goals_limit">Limite Mensal</string>
+    <string name="goals_alert_80">Alerta aos 80%</string>
+    <string name="goals_alert_100">Alerta aos 100%</string>
+    <string name="goals_progress">%1$s de %2$s (%3$s)</string>
+    <string name="goals_exceeded">Meta excedida!</string>
+    <string name="goals_warning">Atenção: próximo do limite</string>
+    
+    <!-- Reports -->
+    <string name="reports_title">Relatórios</string>
+    <string name="reports_monthly">Relatório Mensal</string>
+    <string name="reports_yearly">Relatório Anual</string>
+    <string name="reports_export_pdf">Exportar PDF</string>
+    <string name="reports_no_data">Nenhum dado disponível</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">Perfil</string>
+    <string name="profile_name">Nome</string>
+    <string name="profile_email">E-mail</string>
+    <string name="profile_settings">Configurações</string>
+    <string name="profile_about">Sobre</string>
+    
+    <!-- Common -->
+    <string name="common_loading">Carregando...</string>
+    <string name="common_error">Erro</string>
+    <string name="common_success">Sucesso</string>
+    <string name="common_cancel">Cancelar</string>
+    <string name="common_confirm">Confirmar</string>
+    <string name="common_save">Salvar</string>
+    <string name="common_edit">Editar</string>
+    <string name="common_delete">Excluir</string>
+    <string name="common_retry">Tentar Novamente</string>
+    <string name="common_ok">OK</string>
+    
+    <!-- Errors -->
+    <string name="error_network">Erro de conexão</string>
+    <string name="error_pdf_invalid">PDF inválido ou corrompido</string>
+    <string name="error_pdf_parsing">Erro ao processar PDF</string>
+    <string name="error_auth_failed">Falha na autenticação</string>
+    <string name="error_unknown">Erro desconhecido</string>
+    
+    <!-- Insights -->
+    <string name="insight_spending_increase">Você gastou %1$s%% a mais que o mês passado</string>
+    <string name="insight_goal_achieved">Meta de %1$s atingida!</string>
+    <string name="insight_installment_warning">Atenção: você está parcelando compras recorrentes</string>
+    <string name="insight_category_increase">Gastos com %1$s aumentaram %2$s%% em relação ao mês passado</string>
+    <string name="insight_category_savings">Você economizou %1$s em %2$s este mês</string>
+    
+    <!-- Invoice Detail -->
+    <string name="invoice_details_title">Detalhes da Fatura</string>
+    <string name="expenses_by_category">Gastos por Categoria</string>
+    <string name="detailed_expenses">Despesas Detalhadas</string>
+    <string name="edit_category">Editar Categoria</string>
+    <string name="delete_invoice">Excluir Fatura</string>
+    <string name="delete_invoice_confirmation">Tem certeza que deseja excluir esta fatura? Esta ação não pode ser desfeita.</string>
+    <string name="category_updated_success">Categoria atualizada com sucesso!</string>
+    <string name="invoice_deleted_success">Fatura excluída com sucesso!</string>
+    <string name="select_category">Selecione a categoria</string>
+    <string name="expense_format">%1$s - %2$s - %3$s</string>
+    <string name="transactions_count">%d transações</string>
+</resources>

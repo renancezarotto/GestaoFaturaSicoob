@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:fitsSystemWindows="true">
+
+    <!-- Cabeçalho Padronizado -->
+    <include layout="@layout/include_app_toolbar" />
+
+    <!-- SwipeRefreshLayout para Pull-to-Refresh -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollViewDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp">
+
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- SEÇÃO: INSIGHTS -->
+                <TextView
+                    android:id="@+id/textInsightsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Insights"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewInsights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clipToPadding="false"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="8dp"
+                    tools:listitem="@layout/item_insight_card"
+                    tools:itemCount="2" />
+
+                <!-- SEÇÃO: FATURA ATUAL -->
+                <LinearLayout
+                    android:id="@+id/layoutInvoiceHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp">
+                    
+                    <TextView
+                        android:id="@+id/textCurrentInvoiceTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Fatura Atual"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold" />
+                    
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonFilterMonth"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filtrar Mês"
+                        android:textColor="?attr/colorPrimary"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCurrentInvoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <!-- Mês de Referência -->
+                        <TextView
+                            android:id="@+id/textInvoiceMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            tools:text="Junho de 2025" />
+
+                        <!-- Valor Total -->
+                        <TextView
+                            android:id="@+id/textInvoiceTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            tools:text="R$ 2.600,35" />
+
+                        <!-- Vencimento -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="16dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Vencimento:"
+                                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <TextView
+                                android:id="@+id/textInvoiceDueDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textStyle="bold"
+                                tools:text="03/07/2025" />
+                        </LinearLayout>
+
+                        <!-- Countdown -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Faltam:"
+                                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <TextView
+                                android:id="@+id/textCountdown"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                                android:textColor="?attr/colorError"
+                                android:textStyle="bold"
+                                tools:text="21 dias" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SEÇÃO: SUAS METAS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/textGoalsTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🎯 Suas Metas"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonAddGoal"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ Nova Meta"
+                        android:textColor="?attr/colorPrimary" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewGoals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_goal_card"
+                    tools:itemCount="3" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+<!-- ESTADO VAZIO -->
+<LinearLayout
+    android:id="@+id/emptyStateLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <!-- Placeholder para Lottie Animation (calendário vazio) -->
+    <ImageView
+        android:id="@+id/lottieEmptyState"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_empty_state"
+        android:contentDescription="Nenhuma fatura"
+        android:alpha="0.6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nenhuma fatura adicionada este mês"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="?attr/colorOnSurface"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicione sua primeira fatura para começar a acompanhar seus gastos"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAddInvoiceEmpty"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Fatura"
+        android:layout_marginTop="24dp"
+        app:cornerRadius="24dp"
+        app:icon="@android:drawable/ic_input_add" />
+
+</LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

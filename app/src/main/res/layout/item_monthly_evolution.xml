@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="8dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="?attr/colorOutline">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Indicador de Comparação (sem emoji) -->
+        <LinearLayout
+            android:id="@+id/layoutTrend"
+            android:layout_width="4dp"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:background="?attr/colorPrimary" />
+
+        <!-- Informações do Mês -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/textMonthName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Janeiro/2024"
+                android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Janeiro/2024" />
+
+            <TextView
+                android:id="@+id/textMonthValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 2.600,35"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="4dp"
+                tools:text="R$ 2.600,35" />
+
+            <TextView
+                android:id="@+id/textMonthComparison"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+15% vs mês anterior"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="2dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="+15% vs mês anterior" />
+
+        </LinearLayout>
+
+        <!-- Barra de Progresso Visual -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/textMonthPercentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="85%"
+                android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:gravity="end"
+                tools:text="85%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs média anual"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:gravity="end" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

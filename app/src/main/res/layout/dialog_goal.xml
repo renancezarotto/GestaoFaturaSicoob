@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_category"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header com ícone e título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Ícone decorativo -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_category"
+                    android:contentDescription="Ícone de meta"
+                    app:tint="@color/md_theme_light_primary" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Título -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/textDialogTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nova Meta"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defina limites de gastos por categoria"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@android:color/white"
+                    android:alpha="0.9"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Divisor -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"
+            android:alpha="0.3"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Campo Categoria (Spinner) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Categoria"
+                app:startIconDrawable="@drawable/ic_category"
+                app:startIconTint="?attr/colorPrimary"
+                app:boxStrokeColor="?attr/colorPrimary"
+                app:hintTextColor="?attr/colorPrimary"
+                app:endIconMode="dropdown_menu"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_margin="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinnerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:textSize="16sp"
+                    android:inputType="none"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textColorHint="?attr/colorOnSurfaceVariant"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:clickable="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Campo Valor Limite -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutLimitValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Valor Limite"
+                app:startIconDrawable="@drawable/ic_money"
+                app:startIconTint="?attr/colorPrimary"
+                app:boxStrokeColor="?attr/colorPrimary"
+                app:hintTextColor="?attr/colorPrimary"
+                app:boxBackgroundMode="none"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_margin="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextLimitValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Alertas -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alertas de Gastos"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchAlert80"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alerta ao atingir 80%"
+                    android:checked="true"
+                    android:paddingVertical="8dp" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchAlert100"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alerta ao atingir 100%"
+                    android:checked="true"
+                    android:paddingVertical="8dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botões -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCancel"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp"
+                android:minWidth="100dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSave"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@color/md_theme_light_primary"
+                app:icon="@drawable/ic_save"
+                app:iconTint="@color/md_theme_light_primary"
+                app:iconGravity="textStart"
+                android:minWidth="120dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

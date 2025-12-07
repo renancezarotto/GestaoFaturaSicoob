@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header Row -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 OUT"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textStyle="bold"
+                android:background="@drawable/bg_date_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"/>
+
+            <!-- Establishment -->
+            <TextView
+                android:id="@+id/textEstablishment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CAFE DA ANA"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginStart="12dp"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <!-- Auto Badge -->
+            <TextView
+                android:id="@+id/badgeAuto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto"
+                android:textSize="10sp"
+                android:textColor="@color/md_theme_light_onPrimary"
+                android:background="@drawable/bg_auto_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:visibility="gone"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- City -->
+        <TextView
+            android:id="@+id/textCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CORONEL VIVID"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Value and Installment -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="R$ 42,00"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/textInstallment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2/3"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:background="@drawable/bg_installment_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- Category Dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutCategory"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Categoria">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdownCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textSize="14sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
